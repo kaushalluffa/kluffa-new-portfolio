@@ -1,0 +1,45 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 500;
+  }
+  &__menu {
+    ul {
+      display: flex;
+      gap: 2.7rem;
+      align-items: center;
+      list-style-type: none;
+      li {
+        color: #fff;
+        font-family: 'Rubik', sans-serif;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        opacity: 0.5;
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+    &--button {
+      background-color: none;
+      color: #fff;
+      border: none;
+      outline: none;
+      display: inline-flex;
+      padding: 0.9375rem 2.25rem 0.9375rem 2.1875rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1.875rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(3, 3, 4, 0.5);
+    }
+  }
+}
