@@ -1,13 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { memo, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import getHighlightedProjects from '../../utils/getHighlightedProjects';
 import getUserInfo from '../../utils/getUserInfo';
-import { Developer } from '../../utils/types';
+import { Developer, AllProjects } from '../../utils/types';
 import ProjectsWrapper from '../ProjectsWrapper/ProjectsWrapper';
 import TechStack from '../shared/TechStack/TechStack';
 import './style.scss';
 
 function Home() {
   const [userInfo, setUserInfo] = useState<Developer | null>(null);
+  const [highlightedProjects, setHighlightedProjects] = useState<AllProjects>([]);
+  const navigate = useNavigate();
   useEffect(() => {
     getUserInfo().then((response: any) => {
       if (response && response?.developers && Array.isArray(response?.developers) && response?.developers?.length > 0) {
@@ -16,12 +20,19 @@ function Home() {
         setUserInfo(null);
       }
     });
+    getHighlightedProjects().then((response: any) => {
+      if (response && response?.highlights && Array.isArray(response?.highlights) && response?.highlights?.length > 0) {
+        setHighlightedProjects(response?.highlights);
+      } else {
+        setHighlightedProjects([]);
+      }
+    });
   }, []);
   return (
     <div className="home">
       <div className="hero">
         <div className="hero__heading">{userInfo?.shortDesc}</div>
-        <button className="hero__button" type="button">
+        <button className="hero__button" type="button" onClick={() => navigate('/works')}>
           See Projects
         </button>
       </div>
@@ -30,11 +41,11 @@ function Home() {
 
       <div className="highlights">
         <div className="highlights__heading">My Project Highlight</div>
-        <button className="highlights__button" type="button">
+        <button className="highlights__button" type="button" onClick={() => navigate('/works')}>
           Explore More
         </button>
 
-        <ProjectsWrapper />
+        <ProjectsWrapper projects={highlightedProjects} />
       </div>
     </div>
   );

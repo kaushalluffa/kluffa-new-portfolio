@@ -36,6 +36,7 @@
       line-height: normal;
       letter-spacing: 0.10156rem;
       text-transform: uppercase;
+      cursor: pointer;
     }
   }
   .highlights {
@@ -62,11 +63,14 @@
       width: 69.1875rem;
     }
     &__button {
+      background: none;
+      color: #fff;
       width: 15.125rem;
       height: 4.0625rem;
       flex-shrink: 0;
       border-radius: 2.03125rem;
       border: 1px solid #ff9142;
+      cursor: pointer;
     }
     &__project-card {
       padding: 1rem 3rem;

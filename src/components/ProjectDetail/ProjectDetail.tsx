@@ -1,29 +1,41 @@
-import { memo } from 'react';
+/* eslint-disable jsx-a11y/media-has-caption */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { memo, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import getOneProject from '../../utils/getOneProject';
+import { Project } from '../../utils/types';
 
 import SectionHeader from '../shared/SectionHeader/SectionHeader';
 import TechStack from '../shared/TechStack/TechStack';
 import './style.scss';
 
 function ProjectDetail() {
+  const { projectId } = useParams();
+  const [projectInfo, setProjectInfo] = useState<Project>();
+  useEffect(() => {
+    if (projectId) {
+      getOneProject(projectId).then((response: any) => {
+        setProjectInfo(response?.project);
+      });
+    }
+  }, [projectId]);
   return (
     <>
       <SectionHeader title="ProjectDetail" />
       <div className="details">
         <div className="details__coverimg">
-          <img src="https://i.ibb.co/tDtB6PF/detailscover.png" alt="details img" />
+          <img src={projectInfo?.projectCover?.url ?? 'https://i.ibb.co/tDtB6PF/detailscover.png'} alt="details img" />
         </div>
         <div className="details__info">
-          <h4 className="details__info--heading">Project Story</h4>
-          <p className="details__info--desc">
-            Everywhere we are haunted by photography in newspapers, magazines, advertisements on television on the
-            Internet, but we still crave even more.
-            <br />
-            <br /> And what helps to achieve a good result? We will look at these issues and some of the possibilities
-            of photography and explain that it is a combination of thought imagination, visual design, technical skills
-            and organizational skills
-          </p>
+          <h4 className="details__info--heading">{projectInfo?.projectTitle ?? ''}</h4>
+          <p className="details__info--desc">{projectInfo?.projectDescription ?? ''}</p>
         </div>
-        <TechStack heading="Tech stack used in this project" stack={['react']} />
+        <TechStack heading="Tech stack used in this project" stack={projectInfo?.stack ?? ['react']} />
+        <div className="details__video">
+          {(projectInfo?.projectDemoVideoUrl || projectInfo?.projectVideo?.url) && (
+            <video controls src={projectInfo?.projectDemoVideoUrl || projectInfo?.projectVideo?.url} />
+          )}
+        </div>
       </div>
     </>
   );

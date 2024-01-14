@@ -1,11 +1,16 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { memo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.scss';
 
 function Navigation() {
+  const navigate = useNavigate();
   return (
     <div className="navigation">
-      <div className="navigation__logo">Kaushal</div>
+      <div className="navigation__logo" onClick={() => navigate('/')}>
+        Kaushal
+      </div>
       <div className="navigation__menu">
         <ul className="naviation__menu--ul">
           <li className="navigation__menu--li">
