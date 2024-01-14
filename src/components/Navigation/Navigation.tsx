@@ -12,9 +12,6 @@ function Navigation() {
             <Link to="/">Home</Link>
           </li>
           <li className="navigation__menu--li">
-            <Link to="/about">About Me</Link>
-          </li>
-          <li className="navigation__menu--li">
             <Link to="/works">My Works</Link>
           </li>
           <li className="navigation__menu--li">

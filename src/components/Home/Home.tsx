@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import ProjectsWrapper from '../ProjectsWrapper/ProjectsWrapper';
+import TechStack from '../shared/TechStack/TechStack';
 import './style.scss';
 
 function Home() {
@@ -11,6 +12,9 @@ function Home() {
           See Projects
         </button>
       </div>
+
+      <TechStack heading="Technical Skills" stack={['react']} />
+
       <div className="highlights">
         <div className="highlights__heading">My Project Highlight</div>
         <button className="highlights__button" type="button">

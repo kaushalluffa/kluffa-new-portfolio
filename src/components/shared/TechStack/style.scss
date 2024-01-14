@@ -1,0 +1,25 @@
+.tech {
+  &__stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    &--heading {
+      color: #fff;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 2.4rem */
+      text-transform: capitalize;
+    }
+    &--icons {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

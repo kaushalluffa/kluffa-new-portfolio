@@ -1,17 +1,16 @@
 import { memo } from 'react';
 import ProjectsWrapper from '../ProjectsWrapper/ProjectsWrapper';
+import SectionHeader from '../shared/SectionHeader/SectionHeader';
 import './style.scss';
 
 function Works() {
   return (
-    <div className="works">
-      <div className="works__header">
-        <h4 className="works__heading">My Projects</h4>
-      </div>
+    <>
+      <SectionHeader title="My Projects" />
       <div className="works__list">
         <ProjectsWrapper />
       </div>
-    </div>
+    </>
   );
 }
 
