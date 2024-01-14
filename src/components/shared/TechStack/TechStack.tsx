@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { Fragment, memo } from 'react';
 import './style.scss';
 import {
   Apollo,
@@ -83,7 +83,11 @@ function TechStack({ heading, stack }: { heading: string; stack: string[] }) {
   return (
     <div className="tech__stack">
       <div className="tech__stack--heading">{heading}:</div>
-      <div className="tech__stack--icons">{stack?.map((stackItem: string) => techStack?.[stackItem])}</div>
+      <div className="tech__stack--icons">
+        {stack?.map((stackItem: string) => (
+          <Fragment key={stackItem}>{techStack?.[stackItem]}</Fragment>
+        ))}
+      </div>
     </div>
   );
 }
