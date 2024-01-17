@@ -1,14 +1,14 @@
-name: Build & deploy
+  name: Build & deploy
 
-on:
+  on:
   push:
     branches:
       - main
   pull_request:
     branches:
       - main
-jobs:
-build:
+  jobs:
+    build:
   name: Build
   runs-on: ubuntu-latest
 
