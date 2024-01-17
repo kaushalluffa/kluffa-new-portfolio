@@ -13,10 +13,10 @@
 
       steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
   
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 18
   
@@ -26,7 +26,6 @@
         run: |
           git config --global user.name "kaushalluffa"
           git config --global user.email "kaushalluffa91@gmail.com"
-          git remote set-url origin https://github.com/kaushalluffa/kluffa-new-portfolio.git
       - name: Build and deploy
         env:
           VITE_GRAPHCMS_ENDPOINT: ${{secrets.VITE_GRAPHCMS_ENDPOINT}}
