@@ -5,8 +5,23 @@
   padding: 4rem 0;
   justify-content: center;
   align-items: center;
+  &__coverimg {
+    max-width: 80%;
+    @media screen and (min-width: 768px) {
+      max-width: 50%;
+    }
+  }
+  &__video {
+    max-width: 80%;
+    @media screen and (min-width: 768px) {
+      max-width: 50%;
+    }
+  }
   &__info {
-    width: 46.875rem;
+    width: 90%;
+    @media screen and (min-width: 768px) {
+      width: 46.875rem;
+    }
     &--heading {
       color: #fff;
       font-size: 2rem;

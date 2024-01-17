@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Github from '../../assets/icons/Github';
 import './style.scss';
 import { AllProjects, Project } from '../../utils/types';
+import Loader from '../shared/Loader/Loader';
 
 function ProjectsWrapper({ projects }: { projects: AllProjects }) {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ function ProjectsWrapper({ projects }: { projects: AllProjects }) {
         </div>
       ));
     }
-    return 'No Projects Found.';
+    return <Loader />;
   };
   return <div className="highlights__wrapper">{renderProjectCard()}</div>;
 }

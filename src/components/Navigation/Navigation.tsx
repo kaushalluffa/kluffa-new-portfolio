@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { memo, useState } from 'react';
@@ -14,13 +15,13 @@ function Navigation() {
       </div>
       <div className={`navigation__menu ${showMenu ? 'showMenu' : ''}`}>
         <ul className="naviation__menu--ul">
-          <li className="navigation__menu--li">
+          <li onClick={() => setShowMenu(false)} className="navigation__menu--li">
             <Link to="/">Home</Link>
           </li>
-          <li className="navigation__menu--li">
+          <li onClick={() => setShowMenu(false)} className="navigation__menu--li">
             <Link to="/works">My Works</Link>
           </li>
-          <li className="navigation__menu--li">
+          <li onClick={() => setShowMenu(false)} className="navigation__menu--li">
             <button type="button" className="navigation__menu--button">
               <Link to="/contact">Contact</Link>
             </button>
