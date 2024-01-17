@@ -39,9 +39,9 @@ function Home() {
 
       <TechStack heading="Technical Skills" stack={(userInfo && userInfo?.stack) ?? ['react']} />
 
-      <div className="highlights">
-        <div className="highlights__heading">My Project Highlight</div>
-        <button className="highlights__button" type="button" onClick={() => navigate('/works')}>
+      <div className="section">
+        <div className="section__heading">My Project Highlight</div>
+        <button className="section__button" type="button" onClick={() => navigate('/works')}>
           Explore More
         </button>
 

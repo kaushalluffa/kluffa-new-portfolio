@@ -10,15 +10,28 @@
     gap: 5rem;
     justify-content: center;
     align-items: center;
-    padding: 12rem 17rem;
+    padding: 2rem 1rem;
+    @media screen and (min-width: 320px) {
+      padding: 3rem 2rem;
+    }
+    @media screen and (min-width: 1440px) {
+      padding: 12rem 17rem;
+    }
     &__heading {
       color: #fff;
       text-align: center;
-      font-size: 3rem;
+      font-size: 1.5rem;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      width: 55rem;
+      width: 100%;
+      @media screen and (min-width: 320px) {
+        font-size: 2rem;
+      }
+      @media screen and (min-width: 1024px) {
+        max-width: 55rem;
+        font-size: 3rem;
+      }
     }
     &__button {
       background: none;
@@ -39,7 +52,7 @@
       cursor: pointer;
     }
   }
-  .highlights {
+  .section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,11 +69,18 @@
     &__heading {
       color: #fff;
       text-align: center;
-      font-size: 4rem;
+      font-size: 1.5rem;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      width: 69.1875rem;
+      width: 100%;
+      @media screen and (min-width: 320px) {
+        font-size: 2rem;
+      }
+      @media screen and (min-width: 1024px) {
+        max-width: 69.1875rem;
+        font-size: 4rem;
+      }
     }
     &__button {
       background: none;
