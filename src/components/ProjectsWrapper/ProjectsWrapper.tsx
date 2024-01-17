@@ -12,7 +12,7 @@ function ProjectsWrapper({ projects }: { projects: AllProjects }) {
     if (projects && Array.isArray(projects) && projects?.length > 0) {
       return projects?.map((project: Project) => (
         <div key={project?.id} className="highlights__project-card" onClick={() => navigate(`/works/${project?.id}`)}>
-          <div className="hightlights__project-card--img">
+          <div className="highlights__project-card--img">
             <img
               src={project?.projectThumbnail?.url ?? 'https://i.ibb.co/80bKfpD/Img.png'}
               alt={project?.projectTitle ?? 'test demo'}

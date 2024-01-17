@@ -35,16 +35,13 @@
     width: 35rem;
     cursor: pointer;
     &--img {
-      width: 35rem;
-      height: 38.75rem;
+      display: flex;
+      width: 100%;
+      justify-content: center;
       flex-shrink: 0;
       border-radius: 1rem;
       background-size: cover;
       background-position: center;
-      img {
-        width: 100%;
-        height: 100%;
-      }
     }
     &--info {
       display: flex;

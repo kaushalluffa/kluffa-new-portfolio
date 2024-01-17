@@ -1,3 +1,8 @@
 .App {
-  padding: 0 9rem;
+  @media screen and (min-width: 1024px) {
+    padding: 0 9rem;
+  }
+}
+img {
+  width: 100%;
 }
