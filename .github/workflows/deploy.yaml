@@ -1,0 +1,34 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and deploy
+        env:
+        VITE_GRAPHCMS_ENDPOINT: ${{secrets.VITE_GRAPHCMS_ENDPOINT}}
+        VITE_GRAPHCMS_TOKEN: ${{secrets.VITE_GRAPHCMS_TOKEN}}
+        VITE_EMAILJS_SERVICE_ID: ${{secrets.VITE_EMAILJS_SERVICE_ID}}
+        VITE_EMAILJS_TEMPLATE_ID: ${{secrets.VITE_EMAILJS_TEMPLATE_ID}}
+        VITE_EMAILJS_PUBLIC_KEY: ${{secrets.VITE_EMAILJS_PUBLIC_KEY}}
+        run: |
+          npm run build
+          echo "/* 200.html */" > build/200.html
+          npx gh-pages -d build -b gh-pages -m "Deploy to GitHub Pages"
