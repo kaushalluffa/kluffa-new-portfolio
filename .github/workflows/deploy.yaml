@@ -20,7 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
+      - name: Configure Git
+        run: |
+          git config --global user.name "kaushal luffa"
+          git config --global user.email "kaushalluffa91@gmail.com"
       - name: Build and deploy
         env:
           VITE_GRAPHCMS_ENDPOINT: ${{secrets.VITE_GRAPHCMS_ENDPOINT}}
