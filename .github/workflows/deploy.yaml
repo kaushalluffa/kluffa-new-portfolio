@@ -26,7 +26,7 @@
         run: |
           git config --global user.name "kaushalluffa"
           git config --global user.email "kaushalluffa91@gmail.com"
-          git remote set-url origin https://x-access-token:${{secrets.PAC_TOKEN}}@github.com/kluffa-new-portfolio
+          git remote set-url origin https://github.com/kaushalluffa/kluffa-new-portfolio.git
       - name: Build and deploy
         env:
           VITE_GRAPHCMS_ENDPOINT: ${{secrets.VITE_GRAPHCMS_ENDPOINT}}
