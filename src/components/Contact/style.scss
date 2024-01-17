@@ -1,38 +1,58 @@
 .contact {
   display: flex;
   flex-direction: column;
-  padding: 8rem;
-  width: 90rem;
+  padding: 1rem;
+  @media screen and (min-width: 1024px) {
+    padding: 8rem;
+  }
 
   &__form {
+    gap: 2rem;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
     &-fields {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      width: 40%;
+      width: 100%;
+      @media screen and (min-width: 1024px) {
+        width: 40%;
+      }
     }
     &--input {
       background: none;
       outline: none;
       border: none;
-      padding: 2rem 2rem 2rem 0;
       border-bottom: 0.0625rem solid #949494;
       color: #fff;
-      font-size: 1.5rem;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+      font-size: 1rem;
+      padding: 1rem;
+      @media screen and (min-width: 1024px) {
+        padding: 2rem 2rem 2rem 0;
+        font-size: 1.5rem;
+      }
     }
   }
   &__message {
     color: #fff;
-    font-size: 4rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    width: 27.25rem;
+    font-size: 1.5rem;
+    @media screen and (min-width: 768px) {
+      font-size: 3rem;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 4rem;
+      width: 27.25rem;
+    }
   }
   &__send {
     background: none;
