@@ -11,7 +11,7 @@
     "format": "prettier \"src/**/*.{js,jsx,ts,tsx,css,scss}\" --write",
     "compile": "tsc",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
