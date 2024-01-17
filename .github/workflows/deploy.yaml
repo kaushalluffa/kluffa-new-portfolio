@@ -31,4 +31,4 @@ jobs:
         run: |
           npm run build
           echo "/* 200.html */" > dist/200.html
-          npx gh-pages -d build -b gh-pages -m "Deploy to GitHub Pages"
+          npx gh-pages -d dist -b gh-pages -m "Deploy to GitHub Pages"
