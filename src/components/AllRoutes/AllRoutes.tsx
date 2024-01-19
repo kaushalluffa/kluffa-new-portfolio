@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import { memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Contact from '../Contact/Contact';
@@ -7,13 +8,15 @@ import Works from '../Works/Works';
 
 function AllRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/works" element={<Works />} />
-      <Route path="/works/:projectId" element={<ProjectDetail />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
+    <AnimatePresence mode="wait">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/works" element={<Works />} />
+        <Route path="/works/:projectId" element={<ProjectDetail />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </AnimatePresence>
   );
 }
 

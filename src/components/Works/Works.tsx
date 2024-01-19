@@ -5,6 +5,7 @@ import SectionHeader from '../shared/SectionHeader/SectionHeader';
 import './style.scss';
 import { AllProjects } from '../../utils/types';
 import getAllProject from '../../utils/getAllProjects';
+import AnimatedPage from '../../AnimatedPage';
 
 function Works() {
   const [allProjects, setAllProjects] = useState<AllProjects>([]);
@@ -14,12 +15,12 @@ function Works() {
     });
   }, []);
   return (
-    <>
+    <AnimatedPage>
       <SectionHeader title="My Projects" />
       <div className="works__list">
         <ProjectsWrapper projects={allProjects} />
       </div>
-    </>
+    </AnimatedPage>
   );
 }
 

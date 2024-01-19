@@ -4,6 +4,7 @@ import { memo, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import SectionHeader from '../shared/SectionHeader/SectionHeader';
 import './style.scss';
+import AnimatedPage from '../../AnimatedPage';
 
 function Contact() {
   const [name, setName] = useState<string>('');
@@ -36,7 +37,7 @@ function Contact() {
       );
   };
   return (
-    <>
+    <AnimatedPage>
       <SectionHeader title="Contact Me" />
       <div className="contact">
         <div className="contact__form">
@@ -74,7 +75,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    </>
+    </AnimatedPage>
   );
 }
 
